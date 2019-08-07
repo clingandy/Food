@@ -1,0 +1,57 @@
+/* pages/opinion/opinion.wxss */
+page{
+  background-color: #FFF;
+}
+.container{
+  margin: 20rpx;
+  padding: 100rpx 0;
+  font-size: 33rpx;
+}
+
+.clsView{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+  margin: 20rpx;
+  height: 80rpx;
+}
+.clsImg{
+  text-align: center;
+  width: 250rpx;
+}
+.clsImg image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  
+}
+
+.clsTxt{
+  width: 150rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  vertical-align: middle;
+  color: #aeaeae;
+  margin: 0;
+  padding-left: 20rpx;
+}
+.clsInput,.clsRadio{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 10rpx;
+  color: #000;
+  margin: 0;
+  vertical-align: middle;
+  
+}
+.clsView navigator{
+  text-align: right;
+  text-decoration:underline;
+}
+
+
+.clsBtn{
+  margin: 50rpx 0;
+  background-color: #57b1fd;
+  color: #fff;
+}

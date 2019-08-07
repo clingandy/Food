@@ -1,0 +1,78 @@
+/**index.wxss**/
+page{
+  background-color: #f6f6f6;
+}
+
+.container {
+  padding: 0;
+  /* padding-top: 10rpx; */
+} 
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+  background-color: #ffffff;
+  border-bottom: 6rpx solid #f6f6f6;
+  width: 100%;
+  height: 100%;
+  padding: 40rpx 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+
+.clsUserInfo{
+  z-index: 999;
+  width:100%;
+  background-color: #ffffff;
+}
+.clsView{
+  position:  relative;
+  display:flex;
+  flex-direction:row;
+  padding: 20rpx 50rpx 30rpx;
+  height: 55rpx;
+  border-bottom: 6rpx solid #f6f6f6;
+  /*margin-bottom:10rpx;*/
+}
+.clsView label{
+  line-height: 80rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+  color: #1d1d26;
+  font-size:30rpx;
+}
+.clsView .clsIcon{
+  width:50rpx;
+  height: 50rpx;
+  margin: auto 0;
+  display: block;
+}
+.clsView .clsEnterIcon{
+  position: absolute;
+  width:30rpx;
+  height: 30rpx;
+  display: block;
+  right: 50rpx;
+  top:37%;
+}
+.clsViewLast{
+  border-bottom: none;
+  margin-bottom:0;
+}
+
+.image{
+  width: 560rpx;
+  height: 560rpx;
+}

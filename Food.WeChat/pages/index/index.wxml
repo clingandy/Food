@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <canvas-share bindclose="close" userInfo="{{userInfo}}" visible="{{visible}}" /> -->
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="show" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="clsUserInfo">
+    <navigator class="clsView" url="/pages/map/map">
+      <label>按图选择</label>
+      <image class="clsEnterIcon" src="/img/uEnter.png"></image>
+    </navigator>
+    <navigator class="clsView" url="/pages/choose/food/food">
+      <label>美食选择</label>
+      <image class="clsEnterIcon" src="/img/uEnter.png"></image>
+    </navigator>
+    <navigator class="clsView" url="/pages/account/myCustomizeShop/myCustomizeShop">
+      <label>我的收藏</label>
+      <image class="clsEnterIcon" src="/img/uEnter.png"></image>
+    </navigator>
+    <navigator class="clsView" url="/pages/account/myChooseShop/myChooseShop">
+      <label>历史选择</label>
+      <image class="clsEnterIcon" src="/img/uEnter.png"></image>
+    </navigator>
+    <navigator class="clsView clsViewLast" url="/pages/opinion/opinion">
+      <label>问题反馈</label>
+      <image class="clsEnterIcon" src="/img/uEnter.png"></image>
+    </navigator>
+  </view>
+
+  <modal wx:if='{{visible}}' title='随意吃' bindcancel='close' bindconfirm='close'>
+    <view>
+      <image class="image" src="data:image/png;base64,{{imgUrl}}" mode='aspectFill'></image>
+    </view>
+  </modal>
+</view>

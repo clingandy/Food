@@ -1,0 +1,15 @@
+<!--pages/opinion/opinion.wxml-->
+<view class="container">
+  <form bindsubmit="{{btnSubmit}}">
+    <view class="clsView">
+      <label class="clsTxt">反馈意见</label>
+      <input class="clsInput" name="opinion" maxlength="150" placeholder="请输入反馈信息" value=""  />
+    </view>
+    <view class="clsView">
+      <label class="clsTxt">联系方式</label>
+      <input class="clsInput" name="contact" maxlength="50" placeholder="请输入联系方式" value=""  />
+    </view>
+    <view class="errorMsg">{{tip}}</view>
+    <button class="clsBtn" formType="submit">{{btnTxt}}</button>
+  </form>
+</view>

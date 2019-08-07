@@ -1,0 +1,19 @@
+<!--pages/account/myChooseFood/myChooseFood.wxml-->
+<view class="clsGroupr clsMsgHeads">
+  <navigator url="/pages/account/myChooseShop/myChooseShop" open-type="redirect" class="clsMsgTxt">按图选择</navigator>
+  <view class="clsMsgTxt clsMsgMid clsMsgChecked">美食选择</view>
+  <navigator url="/pages/account/myChooseCustomizeShop/myChooseCustomizeShop" open-type="redirect" class="clsMsgTxt">收藏选择</navigator>
+</view>
+<view class="container">
+  <view class="clsGroupr clsView" wx:for="{{chooseShopList}}" wx:key="item">
+    <navigator url="/pages/choose/foodDetails/foodDetails?id={{item.foodId}}&name={{item.foodName}}">
+      <view class="clsGroupc clsContent">
+        <view class="clsTitle">{{item.foodName}}</view>
+        <view class="clsCategory">{{item.createTime}}</view>
+      </view>
+    </navigator>
+  </view>
+  <view wx:if="{{!isSearch}}">
+    <view class="pageMsg">没有更多的数据</view>
+  </view>
+</view>

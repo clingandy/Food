@@ -1,0 +1,67 @@
+/* pages/choose/chooseFood.wxss */
+.clsFoodListView{
+  margin: 30rpx;
+  margin-bottom: 110rpx;
+}
+/*chooseShop*/
+.clsChoose{
+  padding: 8rpx 0;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.clsFoodUrl{
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 20%;
+}
+.clsFoodDel{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 35rpx;
+}
+.clsGroupr{
+  align-items: center;
+}
+.clsGroupc{
+  vertical-align: middle;
+  padding:0 20rpx;
+  width: 460rpx;
+}
+.clsCategory{
+  color: #727272;
+  font-size:24rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.clsTitle{
+  font-size:33rpx;
+  font-family: "黑体";
+  position: relative;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+
+/*bottom*/
+.clsBtnView{
+  position: fixed;
+  background-color: #fff;
+  border-top: 2rpx solid #eee;
+  height: 100rpx;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.clsBtn{
+  width: 50%;
+  padding:10rpx;
+  line-height: 80rpx;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #099aff;
+}

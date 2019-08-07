@@ -1,0 +1,44 @@
+<map 
+  id="myMap" 
+  latitude="{{poi.latitude}}" 
+  longitude="{{poi.longitude}}" 
+  markers="{{markers}}" 
+  scale='16'
+  show-location>
+
+  <cover-view class='cls_location_center'>
+    <cover-image src='../../img/location_logo_red.png' class='cls_location_center_i'></cover-image>
+  </cover-view>
+
+  <cover-view class='cls_location' bindtap='moveToLocation'>
+    <cover-image src='../../img/location.png' class='cls_location_i'></cover-image>
+  </cover-view>
+</map>
+<!--绑定输入事件-->
+<input type='text' class='clsQuery' confirm-type="查询" maxlength="50" placeholder="请输入查询的美食" bindconfirm="querySuggestion" value="{{backfill}}"></input>
+<!--关键词输入提示列表渲染-->
+<scroll-view scroll-y='true' bindscrolltolower="bindscrolltolower" class="clsViewList" >
+  <block wx:for="{{suggestion}}" wx:key="index">
+      <!--绑定回填事件-->
+      <view class="cls-food-view" bindtap="backfill" id="{{index}}">
+        <!--根据需求渲染相应数据-->
+        <!--渲染地址title-->
+        <view class="clsListTitle">
+            <lable style="text-align:center;">{{item.title}}</lable>
+            <view class='clsImgView' bindtap='addShopCollection' id="{{index}}">
+              <image src='../../img/collection.png'></image>
+            </view>
+            <view class='clsImgView' bindtap='addShopCache' id="{{index}}">
+              <image src='../../img/add.png'></image>
+            </view>
+            <!-- <lable class="clsListBtn" bindtap="addShopCache" id="{{index}}">选择</lable> -->
+        </view>
+        <!--渲染详细地址-->
+        <view class='clsListAddr'>{{item.address}} 距离{{item.distance}}米</view>
+      </view>
+  </block>
+</scroll-view>
+
+<view class="clsGroupr clsBtnView">
+  <navigator class="clsBtn" url="/pages/choose/chooseShop/chooseShop">选择页面(已选择{{chooseShopListCache.length}})</navigator>
+</view>

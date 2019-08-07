@@ -1,0 +1,6 @@
+<!--pages/choose/foodDetails/foodDetails.wxml-->
+<view class='clsViewDetails'>
+  <rich-text nodes="{{food.details}}"></rich-text>
+  <view></view>
+  <image wx:if="{{food.imgUrl != ''}}" src="{{imgUrl}}{{food.imgUrl}}" mode="aspectFill" ></image>
+</view>

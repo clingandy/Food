@@ -1,0 +1,35 @@
+<!--pages/account/myFood/myFood.wxml-->
+<view class='clsPicker'>
+  <picker bindchange="bindLableChange" value="{{lableIndex}}" range="{{lableArray}}" range-key="name">
+    <view class="picker">
+      当前标签：{{lableArray[lableIndex].name}}
+    </view>
+  </picker>
+</view>
+<view class="clsShopListView">
+  <block wx:for="{{shopList}}" wx:key="index">
+    <view class="clsChoose">
+      <view class="clsTitle">
+        <lable>{{item.title}}</lable>
+        <navigator class='clsImgView' url="/pages/account/myCustomizeShopAdd/myCustomizeShopAdd?id={{item.id}}" hover-class="none">
+          <image src='../../../img/edit.png'></image>
+        </navigator>
+        <view class='clsImgView' bindtap='delShopHandler' id="{{index}}">
+          <image src='../../../img/del.png'></image>
+        </view>
+      </view>
+      <view class="clsCategory">{{item.category}}</view>
+    </view>
+  </block>
+  <view wx:if="{{shopList.length == 0}}">
+      <view class="pageMsg">没有查询的数据</view>
+    </view>
+</view>
+<view class="clsGroupr clsBtnView">
+  <view class="clsBtn">
+    <navigator url="/pages/account/myCustomizeShopAdd/myCustomizeShopAdd?id=" hover-class="none">
+      添加收藏
+    </navigator>
+  </view>
+  <view class="clsBtn" bindtap="chooseShop">随机选择</view>
+</view>

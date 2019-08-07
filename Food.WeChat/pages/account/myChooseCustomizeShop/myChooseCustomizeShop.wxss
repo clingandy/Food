@@ -1,0 +1,71 @@
+/* pages/account/myChooseCustomizeShop/myChooseCustomizeShop.wxss */
+.clsCategory{
+  color: #727272;
+  font-size:26rpx;
+}
+.clsTitle{
+  font-size:33rpx;
+  font-family: "黑体";
+}
+
+/*New*/
+.clsMsgHeads{
+  background-color: #fff;
+}
+.clsMsgTxt{
+  padding: 35rpx 20rpx;
+  text-align: center;
+  width: 100%;
+  color: #404043;
+  font-size: 30rpx;
+  font-family: "黑体"
+}
+.clsMsgMid{
+  border-left: 2rpx solid #eee;
+  border-right: 2rpx solid #eee;
+}
+.clsMsgChecked{
+  color: #099aff;
+  border-bottom: 4rpx solid #099aff;
+}
+
+/* 内容 */
+.container{
+  margin: 20rpx;
+  padding: 5rpx;
+  font-size: 30rpx;
+}
+
+.clsView{
+  margin: 10rpx 0;
+  padding:5rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  font-family: "黑体";
+  border-bottom: 2rpx solid #eeeeee;
+}
+.clsContent view{
+  padding:8rpx 0;
+  text-align: center;
+}
+.clstxt{
+  color: #099aff;
+}
+.clsRight{
+  text-align: right;
+  padding-top: 20rpx;
+}
+.clsStatus{
+  font-family: "arial";
+}
+
+
+.btnLook{
+  background-color: #fff;
+  color: #099aff;
+  line-height:2.0;
+  font-size:30rpx;
+  /* padding:0rpx 15rpx; */
+  font-family: "黑体";
+  border: 2rpx solid #099aff;
+}

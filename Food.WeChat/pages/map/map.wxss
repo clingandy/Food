@@ -1,0 +1,98 @@
+/* pages/map/map.wxss */
+map{
+  width: 100%;
+  height: 390rpx;
+  z-index: 999;
+}
+button{
+  margin: 20rpx;
+}
+.clsQuery{
+  margin: 10rpx;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  background-color: #f6f6f6;
+}
+.cls-food-view{
+  margin: 20rpx;
+  z-index: -999;
+}
+
+.cls_location{
+  width: 46px;
+  height: 46px;
+  position: relative;
+  top: 70%;
+  left: 85%;
+}
+
+.cls_location_center{
+  width: 46px;
+  height: 46px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -46px;
+  margin-left: -23px;
+}
+
+.cls_location_i,.cls_location_center_i{
+  width: 100%;
+  height: 100%;
+}
+
+.clsViewList{
+  height: 580rpx;
+  /* margin-bottom: 200rpx; */
+}
+
+.clsImgView{
+   width: 52rpx;
+   height: 52rpx;
+   display: inline-block;
+   text-align: center;
+   vertical-align: middle;
+   margin-left: 30rpx;
+}
+.clsImgView image{
+   width: 100%;
+   height: 100%;
+}
+
+.clsListTitle{
+  /* text-align: center; */
+  vertical-align: middle;
+}
+.clsListAddr{
+  font-size:12px;
+  color:#666;
+}
+.clsListBtn{
+  padding:3rpx 10rpx;
+  background-color: #099aff;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  margin: auto;
+}
+
+
+.clsBtnView{
+  position: fixed;
+  background-color: #fff;
+  border-top: 2rpx solid #eee;
+  height: 100rpx;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.clsBtn{
+  width: 100%;
+  padding:10rpx;
+  line-height: 80rpx;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #099aff;
+}

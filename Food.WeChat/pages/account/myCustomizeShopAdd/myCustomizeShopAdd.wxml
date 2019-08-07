@@ -1,0 +1,37 @@
+<!--pages/account/myFoodAdd/myFoodAdd.wxml-->
+<view class="container">
+  <form bindsubmit="{{btnSubmit}}">
+    <view class="clsView">
+      <label class="clsTxt">名称</label>
+      <input class="clsInput" name="title" maxlength="25" placeholder="请输入名称" value="{{shop.title}}"  />
+    </view>
+    <view class="clsView">
+      <label class="clsTxt">类别</label>
+      <input class="clsInput" name="category" maxlength="25" placeholder="请输入类别，例如：粤菜" value="{{shop.category}}"  />
+    </view>
+    <view class="clsView">
+      <label class="clsTxt">标签</label>
+      <radio-group class="clsRadio" bindchange="radioLableChange">
+        <label class="radio">
+          <view>
+            <radio value="1" checked="{{lable==1?'true':''}}" />春
+            <radio value="2" checked="{{lable==2?'true':''}}" />夏
+            <radio value="3" checked="{{lable==3?'true':''}}" />秋
+            <radio value="4" checked="{{lable==4?'true':''}}" />冬
+          </view>
+          <view>
+            <radio value="5" checked="{{lable==5?'true':''}}" />住处
+            <radio value="6" checked="{{lable==6?'true':''}}" />公司
+            <radio value="7" checked="{{lable==7?'true':''}}" />老家
+          </view>
+          <view>
+            <radio value="5" checked="{{lable==8?'true':''}}" />临时
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="clsView"></view>
+    <view class="errorMsg">{{tip}}</view>
+    <button class="clsBtn" formType="submit">{{btnTxt}}</button>
+  </form>
+</view>

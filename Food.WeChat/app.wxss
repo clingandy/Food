@@ -1,0 +1,46 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/* page{
+  background-color: #f0f0f0;
+} */
+.hideTag{
+  display: none;
+}
+.showTag{
+  display: block;
+}
+
+.clsGroupr{
+  display: flex;
+  flex-direction: row;
+}
+.clsGroupc{
+  display: flex;
+  flex-direction: column;
+}
+
+.errorMsg{
+  color: red;
+  font-size:28rpx;
+  padding: 20rpx 0 0 35rpx;
+}
+
+.pageMsg{
+    color: #727272;
+    font-size:32rpx;
+    padding:35rpx;
+    text-align: center;
+}
+.clsSelect button{
+  background-color: #57b1fd;
+  color: #fff;
+}

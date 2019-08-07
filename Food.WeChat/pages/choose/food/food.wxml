@@ -1,0 +1,29 @@
+<!--pages/choose/food/food.wxml-->
+<view class='clsPicker'>
+  <picker mode="multiSelector" bindchange="bindCategoryChange" bindcolumnchange="bingCategoryColumnChange" value="{{multiIndex}}" range="{{categoryArray}}" range-key="name">
+      <view class="picker">
+        分类：{{categoryStr}}
+      </view>
+  </picker>
+</view>
+<view class='clsQueryView'>
+  <input type='text' class='clsQuery' confirm-type="查询" maxlength="25" placeholder="请输入查询名称" bindconfirm="queryFood" value=""></input>
+</view>
+<view class="clsFoodListView">
+  <view class="clsGroupr clsChoose" wx:for="{{foodList}}" wx:key="index">
+    <image class="clsFoodUrl" src="{{item.imgUrl?imgUrl+item.imgUrl+'?imageView2/2/w/200':'../../../img/food.png'}}" mode="aspectFill" ></image>
+    <view class="clsGroupc">
+      <view class="clsTitle">{{item.name}}<image class="clsFoodAdd" bindtap='addFoodCache' id="{{index}}" src='../../../img/add.png'></image></view>
+      <navigator bindtap='addSort' id="{{index}}"  url="/pages/choose/foodDetails/foodDetails?id={{item.id}}&name={{item.name}}">
+        <view class="clsCategory">{{item.description}}</view>
+      </navigator>
+    </view>
+  </view>
+  <view wx:if="{{!isSearch}}">
+      <view class="pageMsg">没有更多的数据</view>
+    </view>
+</view>
+<view class="clsGroupr clsBtnView">
+  <view class="clsBtn" bindtap="randChooseFood">当前随机</view>
+  <navigator class="clsBtn" url="/pages/choose/chooseFood/chooseFood">选择页面(已选择{{chooseFoodListCache.length}})</navigator>
+</view>

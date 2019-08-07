@@ -1,0 +1,56 @@
+/* pages/account/choose/choose.wxss */
+.clsShopListView{
+  margin: 10rpx;
+  margin-bottom: 110rpx;
+}
+/*chooseShop*/
+.clsChoose{
+  padding-top: 12rpx;
+}
+.clsChoose>view{
+  margin-top:10rpx;
+}
+.clsCategory{
+  color: #727272;
+  font-size:26rpx;
+}
+.clsTitle{
+  font-size:33rpx;
+  font-family: "黑体";
+}
+
+.clsImgView{
+   width: 52rpx;
+   height: 52rpx; 
+   display: inline-block;
+   text-align: center;
+   vertical-align: middle;
+   margin-left: 30rpx;
+}
+.clsImgView image{
+   width: 100%;
+   height: 100%;
+}
+
+/*bottom*/
+.clsBtnView{
+  position: fixed;
+  background-color: #fff;
+  border-top: 2rpx solid #eee;
+  height: 100rpx;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.clsBtn{
+  width: 50%;
+  padding:10rpx;
+  line-height: 80rpx;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #099aff;
+}
+
+

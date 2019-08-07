@@ -1,0 +1,21 @@
+<!--pages/account/choose/choose.wxml-->
+<view class="clsShopListView">
+  <block wx:for="{{chooseShopListCache}}" wx:key="index">
+    <view class="clsChoose">
+      <view class="clsTitle">
+        <lable>{{item.title}}</lable>
+        <view class='clsImgView' bindtap='delShopCache' id="{{index}}">
+          <image src='../../../img/del.png'></image>
+        </view>
+        <!-- <lable class="clsListBtn" bindtap="delShopCache" id="{{index}}">删除</lable> -->
+      </view>
+      <view class="clsCategory">{{item.category}}</view>
+      <view class="clsCategory">{{item.address}} 距离{{item.distance}}米</view>
+    </view>
+  </block>
+</view>
+
+<view class="clsGroupr clsBtnView">
+  <view class="clsBtn" bindtap="cleanShopCache">清空全部</view>
+  <view class="clsBtn" bindtap="chooseShop">随机选择</view>
+</view>

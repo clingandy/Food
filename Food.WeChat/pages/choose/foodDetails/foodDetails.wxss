@@ -1,0 +1,6 @@
+/* pages/choose/foodDetails/foodDetails.wxss */
+.clsViewDetails{
+  margin: 10rpx 25rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}

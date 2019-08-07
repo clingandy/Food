@@ -1,0 +1,14 @@
+<!--pages/choose/chooseFood.wxml-->
+<view class="clsFoodListView">
+  <view class="clsGroupr clsChoose" wx:for="{{chooseFoodListCache}}" wx:key="index">
+    <image class="clsFoodUrl" src="{{item.imgUrl?imgUrl+item.imgUrl+'?imageView2/2/w/200':'../../../img/food.png'}}" mode="aspectFill" ></image>
+    <view class="clsGroupc">
+      <view class="clsTitle">{{item.name}}<image class="clsFoodDel" bindtap='delFoodCache' id="{{index}}" src='../../../img/del.png'></image></view>
+      <navigator url="/pages/choose/foodDetails/foodDetails?id={{item.id}}&name={{item.name}}"><view class="clsCategory">{{item.description}}</view></navigator>
+    </view>
+  </view>
+</view>
+<view class="clsGroupr clsBtnView">
+  <view class="clsBtn" bindtap="cleanFoodCache">清空全部</view>
+  <view class="clsBtn" bindtap="chooseFood">随机选择</view>
+</view>

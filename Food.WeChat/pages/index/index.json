@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "随意吃",
+
+  "usingComponents": {
+    "canvas-share": "../../components/canvas-share/index"
+  }
+}
