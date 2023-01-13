@@ -1,16 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPublishable>True</IsPublishable>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <UserSecretsId>81112ef5-e809-4ad4-9c4e-8206358a33e7</UserSecretsId>
-    <StartupObject>RandomOrderApi.Program</StartupObject>
+	<PublishTrimmed>false</PublishTrimmed>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="nlog.config" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="nlog.config">
@@ -21,8 +18,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,4 +33,17 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="..\.dockerignore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="..\.dockerignore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

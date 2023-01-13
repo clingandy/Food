@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Exceptionless;
+﻿using Exceptionless;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NLog.Extensions.Logging;
-using NLog.Web;
 using RandomOrderApi.HostedService;
 using RandomOrderApi.Middleware;
 using RandomOrderCore.Config;
 using RandomOrderInject;
-using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
 
 namespace RandomOrderApi
 {
@@ -31,11 +27,24 @@ namespace RandomOrderApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+            });
+            services.AddControllers();
+            services.Configure<ApiBehaviorOptions>(options => //开启参数验证过滤器
+            {
+                options.SuppressInferBindingSourcesForParameters = true;
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             // MVC
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             // 本地缓存
             services.AddMemoryCache();
+            
             // 静态缓存
             services.AddHostedService<ApiBackgroundService>();
 
@@ -45,11 +54,11 @@ namespace RandomOrderApi
             services.Configure<List<MySqlConnectionConfig>>(Configuration.GetSection("MySqlConfig"));
 
             // API文档
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" }); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "My API", Version = "v1" }); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -76,7 +85,13 @@ namespace RandomOrderApi
             app.UseVerifySignMiddleware();
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
 
         /// <summary>
